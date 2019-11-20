@@ -403,9 +403,11 @@ Terme                      Traduction proposée
 abstract data type         type abstrait
 argument                   argument (à ne pas confondre avec *paramètre*)
 backslash                  antislash, *backslash*
+backtrace                  trace d'appels, trace de pile
 bound                      lier
 bug                        bogue, *bug*
 built-in                   native
+callback                   fonction de rappel
 call stack                 pile d'appels
 debugging                  débogage
 deep copy                  copie récursive (préféré), ou copie profonde
@@ -453,6 +455,7 @@ socket                     connecteur ou interface de connexion
 statement                  instruction
 subprocess                 sous-processus
 thread                     fil d'exécution
+traceback                  trace d'appels, trace de pile
 underscore                 tiret bas, *underscore*
 ========================== ===============================================
 

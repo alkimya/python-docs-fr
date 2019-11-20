@@ -110,8 +110,13 @@ msgid ""
 "Use Pylint_ to help make sure you don't regress on your Python 3 support "
 "(``pip install pylint``)"
 msgstr ""
+<<<<<<< HEAD
 "Utilisez Pylint_ pour vous assurer que vous ne régressez pas sur votre "
 "support Python 3 (``pip install pylint``)"
+=======
+"Utilisez Pylint_ pour vous assurer que vous ne régressez pas sur votre prise "
+"en charge de Python 3 (``pip install pylint``)"
+>>>>>>> 77aa16761451eb9e982c5f44ee85529581c167fa
 
 #: ../Doc/howto/pyporting.rst:39
 msgid ""

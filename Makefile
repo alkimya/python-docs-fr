@@ -34,7 +34,14 @@ ifneq "$(shell cd $(CPYTHON_CLONE) 2>/dev/null && git describe --contains --all 
 endif
 	mkdir -p $(CPYTHON_CLONE)/locales/$(LANGUAGE)/
 	ln -nfs $(shell $(PYTHON) -c 'import os; print(os.path.realpath("."))') $(CPYTHON_CLONE)/locales/$(LANGUAGE)/LC_MESSAGES
-	$(MAKE) -C $(CPYTHON_CLONE)/Doc/ VENVDIR=$(VENV) PYTHON=$(PYTHON) SPHINXOPTS='-qW -j$(JOBS) -D locale_dirs=../locales -D language=$(LANGUAGE) -D gettext_compact=0 -D latex_engine=xelatex -D latex_elements.inputenc= -D latex_elements.fontenc=' $(MODE)
+	$(MAKE) -C $(CPYTHON_CLONE)/Doc/ VENVDIR=$(VENV) PYTHON=$(PYTHON) \
+	  SPHINXOPTS='-qW -j$(JOBS) -D locale_dirs=../locales -D language=$(LANGUAGE) -D gettext_compact=0 -D latex_engine=xelatex -D latex_elements.inputenc= -D latex_elements.fontenc=' \
+	  $(MODE) && echo "Build success, files in $(CPYTHON_CLONE)Doc/build/$(MODE), run 'make serve' or 'python3 -m http.server -d $(CPYTHON_CLONE)Doc/build/$(MODE)' to see them."
+
+
+.PHONY: serve
+serve:
+	$(MAKE) -C $(CPYTHON_CLONE)/Doc/ serve
 
 
 $(SPHINX_CONF):
@@ -77,11 +84,11 @@ verifs: powrap pospell
 
 .PHONY: powrap
 powrap: $(VENV)/bin/powrap
-	$(VENV)/bin/powrap --check --quiet *.po */*.po
+	$(VENV)/bin/powrap --check --quiet *.po **/*.po
 
 .PHONY: pospell
 pospell: $(VENV)/bin/pospell
-	$(VENV)/bin/pospell -p dict -l fr_FR *.po */*.po
+	$(VENV)/bin/pospell -p dict -l fr_FR *.po **/*.po
 
 .PHONY: merge
 merge: upgrade_venv
