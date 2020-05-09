@@ -311,32 +311,19 @@ msgstr "Pourquoi ne puis-je pas utiliser d'assignation dans une expression ?"
 
 #: ../Doc/faq/design.rst:152
 msgid "Starting in Python 3.8, you can!"
-<<<<<<< HEAD
-msgstr "A partir de Python 3.8, vous pouvez !"
-=======
 msgstr "Depuis Python 3.8, c'est possible !"
->>>>>>> 77aa16761451eb9e982c5f44ee85529581c167fa
 
 #: ../Doc/faq/design.rst:154
 msgid ""
 "Assignment expressions using the walrus operator `:=` assign a variable in "
 "an expression::"
 msgstr ""
-<<<<<<< HEAD
-"Expressions d'assignation à l'aide de l'opérateur morse `:=` assigner une "
-"variable dans une expression ::"
-
-#: ../Doc/faq/design.rst:160
-msgid "See :pep:`572` for more information."
-msgstr "Voir :pep:`572` pour plus d'informations."
-=======
 "Les expressions d'affectation qui utilisent l'opérateur morse `:=` affectent "
 "une variable dans une expression ::"
 
 #: ../Doc/faq/design.rst:160
 msgid "See :pep:`572` for more information."
 msgstr "Voir la :pep:`572` pour plus d'informations."
->>>>>>> 77aa16761451eb9e982c5f44ee85529581c167fa
 
 #: ../Doc/faq/design.rst:165
 msgid ""
